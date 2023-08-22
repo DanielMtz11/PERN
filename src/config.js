@@ -7,7 +7,7 @@ module.exports ={
         user: process.env.BD_USER,
         password: process.env.BD_PASS,
         host: process.env.HOST,
-        port: process.env.PORT,
+        port: process.env.PORTDB,
         dataBase: process.env.DB,
     }
 }
