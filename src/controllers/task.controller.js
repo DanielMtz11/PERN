@@ -1,5 +1,15 @@
 const pool = require("../db")
 
+
+const getIndex = async(req, res, next)=>{
+    try {
+        const result = await  pool.query("SELECT * FROM task");
+        res.status(200).json(result.rows);
+        } catch (error) {
+            next(error);
+    }
+}
+
 const getAllTask = async(req, res, next)=>{
 
     try {
@@ -93,6 +103,7 @@ const deleteTask = async(req, res, next)=>{
 }
 
 module.exports ={ 
+    getIndex,
     getAllTask,
     getTask,
     createTask,
