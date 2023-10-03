@@ -25,4 +25,15 @@ errorMessage(app);
 app.listen(process.env.PORT  );
 
 console.log(`server port ${process.env.PORT}`);
-// console.log(`hola mundo`);
+console.log(`hola mundo`);
+
+
+// process.on('unhandledRejection', (error, promise) => {
+//     console.error('Unhandled Promise Rejection:', error);
+//   });
+  
+//   process.on('uncaughtException', (error) => {
+//     console.error('Uncaught Exception:', error);
+    
+//   });
+  
