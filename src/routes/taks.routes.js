@@ -4,7 +4,7 @@ const {getAllTask,getTask, createTask, updateTask,deleteTask,getIndex} = require
 const router = Router();
 
 
-//obtener
+//obtener 
 router.get("/", getIndex)
 router.get("/tasks", getAllTask);
 router.get("/tasks/:id", getTask);

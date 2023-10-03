@@ -4,8 +4,8 @@ config();
 
 module.exports ={
     db:{
-        user: process.env.BD_USER,
-        password: process.env.BD_PASS,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASS,
         host: process.env.HOST,
         port: process.env.PORTDB,
         dataBase: process.env.DB,

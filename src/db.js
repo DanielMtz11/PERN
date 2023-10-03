@@ -1,12 +1,32 @@
-const {Pool}= require('pg');
-const {db} = require('./config');
+// const {config} = require ('dotenv');
+
+// config(); 
+// const {Pool}= require('pg');
+
+// const pool = new Pool({
+//     // user: "postgres",
+//     // password:"root",
+//     // host: "localhost",
+//     // port: 5432,
+//     // database: "taskdb"
+// });
+
+
+// module.exports= pool
+
+
+
+const { Pool } = require('pg');
 
 const pool = new Pool({
-    user: "postgres",
-    password: "root",
-    host: "localhost",
-    port:5432,
-    database: "taskdb"
-});
+  connectionString: process.env.POSTGRES_URL + "?sslmode=require",
+})
 
-module.exports= pool
+// console.log(process.env.POSTGRES_URL)
+
+pool.connect((e)=>{
+    if(e) throw e
+    console.log("Connect to PostgreSQL successfully!")
+})
+
+module.exports = pool
