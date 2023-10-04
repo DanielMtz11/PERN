@@ -1,6 +1,5 @@
 const pool = require("../db")
 
-
 const getIndex = async(req, res, next)=>{
     try {
         const result = await  pool.query("SELECT * FROM task");
