@@ -1,3 +1,5 @@
+// this is the code to function in local:
+
 // const {config} = require ('dotenv');
 
 // config(); 
@@ -10,23 +12,19 @@
 //     port: 5432,
 //     database: "taskdb"
 // });
-
-
 // module.exports= pool
 
 
+// this is the code to function in production:
 
-const { Pool } = require('pg');
+// const { Pool } = pg;
+const {config} = require ('dotenv');
+config(); 
+
+const {Pool}= require('pg');
+
 
 const pool = new Pool({
   connectionString: process.env.POSTGRES_URL + "?sslmode=require",
 })
-
-// console.log(process.env.POSTGRES_URL)
-
-pool.connect((e)=>{
-    if(e) throw e
-    console.log("Connect to PostgreSQL successfully!")
-})
-
-module.exports = pool
+module.exports= pool

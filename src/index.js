@@ -14,9 +14,6 @@ app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
 
-// app.use((err, req, res, next)=>{
-//     return res.json({
-//         message: err.message })});
         
 taskRouter(app);
 
@@ -25,7 +22,8 @@ errorMessage(app);
 app.listen(process.env.PORT );
 
 console.log(`server port ${process.env.PORT}`);
-console.log(`hola mundo`);
+// console.log(`hola mundo`);
+
 
 
 process.on('unhandledRejection', (error, promise) => {
